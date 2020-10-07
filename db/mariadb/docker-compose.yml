@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: sf10s65f01se53f01swe35f0we53gf0s31dgvs3g0---.-.-.3sdf1g5sf15wre
+      MYSQL_USER: nestjs
+      MYSQL_PASSWORD: typeorm
+      MYSQL_DATABASE: nestjs_typeorm
+    volumes:
+      - ./data:/var/lib/mysql
+      #- ./script.sql:/docker-entrypoint-initdb.d/init-script.sql
+    ports:
+      - 3306:3306
+
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
